@@ -48,7 +48,7 @@ npm i
 
 export PRIVATE_KEY=Z2Jj8rVO+c5WKx1eO6CdxlMzl05iHX9N3+z8KuVDlkHOrKmYh2qbQgjVA8rznOzCDu5vyB3zMzPbRvfQyymkvzwCsVpwczdUj9qjELRSo4Y0btu2Do/Jpm9FTiQWqDlxzmPx4lT6wiJAZldvzPrV+r0Vij95h7RNt56+jhUWbLiAyKcmMUZe5PVGqlVN8ic0XBmdo1W8U4CxQr5eoGhCyggyabCtfvrn62SHYZHhnADWdz1sog7hVLt53k5T7fW9W0I8tPpxlQKPF4H42EMLzGkndi4XMDSiVJKb0P0mtRYNofCa93fRj/Yo7XKtu8PaHG9jNgNjKRWAuT4TWRshkA==
 
-node ./db/postgres/tables.js
+node ./db/postgres/tables.js 
 
 
 
