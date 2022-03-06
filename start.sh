@@ -2,12 +2,40 @@
 
 chmod 777 start.sh
 
+# INSTALL CURL
+sudo apt update
+
+sudo apt install -y curl
+
+# INSTALL git
+sudo apt -y update
+
+sudo apt install -y git
+
+# INSTALL Node and npm
+sudo apt-get -y update
+
+sudo apt-get -y upgrade
+
+wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-armv7l.tar.xz
+
+tar -xf node-v16.14.0-linux-armv7l.tar.xz
+
+cd node-v16.14.0-linux-armv7l/
+
+sudo cp -R * /usr/local/
+
+npm -v
+
+cd ..
+
+
 # INSTALL POSTGRE
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
-sudo apt-get update
+sudo apt-get -y update
 
 sudo apt-get install postgresql
 
@@ -18,7 +46,7 @@ sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 sudo -u postgres psql -c "CREATE DATABASE loc_web_lite;"
 
 
-# INSTALL INFLUXDB
+## INSTALL INFLUXDB
 sudo curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
 
 sudo echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
