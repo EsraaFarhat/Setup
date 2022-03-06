@@ -103,10 +103,17 @@ pm2 start index.js
 cd ..
 
 # INSTALL THE Frontend
-git clone https://github.com/aya-maher/LOC_WebLite.git
+#git clone https://github.com/aya-maher/LOC_WebLite.git
 
-cd LOC_WebLite
+#cd LOC_WebLite
 
-sudo npm i
 
-export REACT_APP_URL=http://localhost:3001
+ mkdir ~/www
+ git clone https://github.com/aya-maher/LOC_WebLite_Build.git
+ sudo apt install nginx
+# sudo apt-get install ufw
+ sudo cp /etc/nginx/sites-available/default ~
+#!!! update file
+sudo sed -i 's/root /var/www/html;/root /home/pi/www;/'  /etc/nginx/sites-available/default
+sudo systemctl reload nginx.service
+cp -a /home/pi/LOC_WebLite_Build . /home/pi/www
