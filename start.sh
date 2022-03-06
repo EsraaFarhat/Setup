@@ -76,7 +76,7 @@ cd LOC-web-lite
 sudo npm i
 
 export PRIVATE_KEY=Z2Jj8rVO+c5WKx1eO6CdxlMzl05iHX9N3+z8KuVDlkHOrKmYh2qbQgjVA8rznOzCDu5vyB3zMzPbRvfQyymkvzwCsVpwczdUj9qjELRSo4Y0btu2Do/Jpm9FTiQWqDlxzmPx4lT6wiJAZldvzPrV+r0Vij95h7RNt56+jhUWbLiAyKcmMUZe5PVGqlVN8ic0XBmdo1W8U4CxQr5eoGhCyggyabCtfvrn62SHYZHhnADWdz1sog7hVLt53k5T7fW9W0I8tPpxlQKPF4H42EMLzGkndi4XMDSiVJKb0P0mtRYNofCa93fRj/Yo7XKtu8PaHG9jNgNjKRWAuT4TWRshkA==
-
+export MY_IP=`hostname -I`
 # export DATABASE_USERNAME=postgres
 # export DATABASE_PASSWORD=postgres
 # export DATABASE_HOST=localhost
@@ -103,17 +103,11 @@ pm2 start index.js
 cd ..
 
 # INSTALL THE Frontend
-#git clone https://github.com/aya-maher/LOC_WebLite.git
-
-#cd LOC_WebLite
-
-
  mkdir ~/www
  git clone https://github.com/aya-maher/LOC_WebLite_Build.git
  sudo apt install nginx
 # sudo apt-get install ufw
  sudo cp /etc/nginx/sites-available/default ~
-#!!! update file
-sudo sed -i 's/root /var/www/html;/root /home/pi/www;/'  /etc/nginx/sites-available/default
+sudo sed -i 's/root \/var\/www\/html;/root \/home\/pi\/www;/'  /etc/nginx/sites-available/default
 sudo systemctl reload nginx.service
-cp -a /home/pi/LOC_WebLite_Build . /home/pi/www
+cp -a /home/pi/LOC_WebLite_Build/. /home/pi/www
