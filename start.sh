@@ -77,21 +77,21 @@ sudo npm i
 
 export PRIVATE_KEY=Z2Jj8rVO+c5WKx1eO6CdxlMzl05iHX9N3+z8KuVDlkHOrKmYh2qbQgjVA8rznOzCDu5vyB3zMzPbRvfQyymkvzwCsVpwczdUj9qjELRSo4Y0btu2Do/Jpm9FTiQWqDlxzmPx4lT6wiJAZldvzPrV+r0Vij95h7RNt56+jhUWbLiAyKcmMUZe5PVGqlVN8ic0XBmdo1W8U4CxQr5eoGhCyggyabCtfvrn62SHYZHhnADWdz1sog7hVLt53k5T7fW9W0I8tPpxlQKPF4H42EMLzGkndi4XMDSiVJKb0P0mtRYNofCa93fRj/Yo7XKtu8PaHG9jNgNjKRWAuT4TWRshkA==
 
-export DATABASE_USERNAME=postgres
-export DATABASE_PASSWORD=postgres
-export DATABASE_HOST=localhost
-export DATABASE_DIALECT=postgres
-export DATABASE_NAME=loc_web_lite 
-export DATABASE_PORT=5432
+# export DATABASE_USERNAME=postgres
+# export DATABASE_PASSWORD=postgres
+# export DATABASE_HOST=localhost
+# export DATABASE_DIALECT=postgres
+# export DATABASE_NAME=loc_web_lite 
+# export DATABASE_PORT=5432
 
-export INFLUXDB_NAME=loc_logs_lite
-export INFLUXDB_USERNAME=admin
-export INFLUXDB_PASSWORD=loclogsdb
-export INFLUXDB_HOST=localhost
+# export INFLUXDB_NAME=loc_logs_lite
+# export INFLUXDB_USERNAME=admin
+# export INFLUXDB_PASSWORD=loclogsdb
+# export INFLUXDB_HOST=localhost
 
-export MESSAGE=TryingToGenerateToken
+# export MESSAGE=TryingToGenerateToken
 
-export EC2_URL=http://18.189.156.89:3000
+# export EC2_URL=http://18.189.156.89:3000
 
 
 node ./db/postgres/tables.js 
@@ -104,6 +104,8 @@ cd ..
 
 # INSTALL THE Frontend
 git clone https://github.com/aya-maher/LOC_WebLite.git
+
+cd LOC_WebLite
 
 sudo npm i
 
