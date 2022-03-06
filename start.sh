@@ -40,10 +40,12 @@ sudo apt-get install postgresql
 
 sudo apt-get install postgresql-12
 
+
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 
 sudo -u postgres psql -c "CREATE DATABASE loc_web_lite;"
 
+sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                md5/'  /etc/postgresql/12/main/pg_hba.conf
 
 ## INSTALL INFLUXDB
 sudo curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
