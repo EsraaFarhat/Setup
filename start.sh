@@ -29,7 +29,6 @@ npm -v
 
 cd ..
 
-
 # INSTALL POSTGRES
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
@@ -91,7 +90,6 @@ export INFLUXDB_PASSWORD=loclogsdb
 export INFLUXDB_HOST=localhost
 
 export MESSAGE=TryingToGenerateToken
-export PATH=PathTONoWhere
 
 export EC2_URL=http://18.189.156.89:3000
 
