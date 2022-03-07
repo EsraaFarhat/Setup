@@ -110,7 +110,7 @@ cd ..
 # INSTALL THE Frontend
  mkdir ~/www
  git clone https://github.com/aya-maher/LOC_WebLite_Build.git
- sudo apt install nginx
+ sudo apt install nginx -y
 # sudo apt-get install ufw
  sudo cp /etc/nginx/sites-available/default ~
 sudo sed -i 's/root \/var\/www\/html;/root \/home\/pi\/www;/'  /etc/nginx/sites-available/default
