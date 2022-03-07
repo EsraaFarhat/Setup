@@ -40,9 +40,9 @@ sudo apt-get install postgresql -y
 
 # sudo apt-get install postgresql-12 -y
 
-sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+sudo psql -U postgres -W postgres -c "ALTER USER postgres PASSWORD 'postgres';"
 
-sudo -u postgres psql -c "CREATE DATABASE loc_web_lite;"
+sudo psql -U postgres -W postgres -c "CREATE DATABASE loc_web_lite;"
 
 sudo sed -i 's/local   all             postgres                                peer/local   all             postgres                                md5/'  /etc/postgresql/13/main/pg_hba.conf
 sudo sed -i 's/host    all             all             127.0.0.1\/32            md5/host    all             all            0.0.0.0\/0              md5/'  /etc/postgresql/13/main/pg_hba.conf
