@@ -93,6 +93,10 @@ sudo npm install -g pm2
 
 pm2 start index.js
 
+pm2 startup systemd | bash
+
+pm2 save
+
 cd ..
 
 # INSTALL THE Frontend
