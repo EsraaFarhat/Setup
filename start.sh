@@ -17,7 +17,8 @@ sudo apt-get -y update
 
 sudo apt-get -y upgrade
 
-wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-armv7l.tar.xz
+wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-arm64.tar.xz
+#wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-armv7l.tar.xz
 
 tar -xf node-v16.14.0-linux-armv7l.tar.xz
 
