@@ -20,9 +20,11 @@ sudo apt-get -y upgrade
 wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-arm64.tar.xz
 #wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-armv7l.tar.xz
 
-tar -xf node-v16.14.0-linux-armv7l.tar.xz
+tar -xf node-v16.14.0-linux-arm64.tar.xz
+#tar -xf node-v16.14.0-linux-armv7l.tar.xz
 
-cd node-v16.14.0-linux-armv7l/
+cd node-v16.14.0-linux-arm64
+#cd node-v16.14.0-linux-armv7l/
 
 sudo cp -R * /usr/local/
 
@@ -84,9 +86,6 @@ sudo npm i
 sudo echo 'export PRIVATE_KEY=Z2Jj8rVO+c5WKx1eO6CdxlMzl05iHX9N3+z8KuVDlkHOrKmYh2qbQgjVA8rznOzCDu5vyB3zMzPbRvfQyymkvzwCsVpwczdUj9qjELRSo4Y0btu2Do/Jpm9FTiQWqDlxzmPx4lT6wiJAZldvzPrV+r0Vij95h7RNt56+jhUWbLiAyKcmMUZe5PVGqlVN8ic0XBmdo1W8U4CxQr5eoGhCyggyabCtfvrn62SHYZHhnADWdz1sog7hVLt53k5T7fW9W0I8tPpxlQKPF4H42EMLzGkndi4XMDSiVJKb0P0mtRYNofCa93fRj/Yo7XKtu8PaHG9jNgNjKRWAuT4TWRshkA==' >> ~/.bashrc
 sudo echo 'export MY_IP=`hostname -I`' >> ~/.bashrc
 source ~/.bashrc
-#export PRIVATE_KEY=Z2Jj8rVO+c5WKx1eO6CdxlMzl05iHX9N3+z8KuVDlkHOrKmYh2qbQgjVA8rznOzCDu5vyB3zMzPbRvfQyymkvzwCsVpwczdUj9qjELRSo4Y0btu2Do/Jpm9FTiQWqDlxzmPx4lT6wiJAZldvzPrV+r0Vij95h7RNt56+jhUWbLiAyKcmMUZe5PVGqlVN8ic0XBmdo1W8U4CxQr5eoGhCyggyabCtfvrn62SHYZHhnADWdz1sog7hVLt53k5T7fW9W0I8tPpxlQKPF4H42EMLzGkndi4XMDSiVJKb0P0mtRYNofCa93fRj/Yo7XKtu8PaHG9jNgNjKRWAuT4TWRshkA==
-#export MY_IP=`hostname -I`
-
 
 node ./db/postgres/tables.js 
 
@@ -101,11 +100,11 @@ pm2 save
 cd ..
 
 # INSTALL THE Frontend
- mkdir ~/www
- git clone https://github.com/aya-maher/LOC_WebLite_Build.git
- sudo apt install nginx -y
+mkdir ~/www
+git clone https://github.com/aya-maher/LOC_WebLite_Build.git
+sudo apt install nginx -y
 # sudo apt-get install ufw
- sudo cp /etc/nginx/sites-available/default ~
+sudo cp /etc/nginx/sites-available/default ~
 sudo sed -i 's/root \/var\/www\/html;/root \/home\/pi\/www;/'  /etc/nginx/sites-available/default
 sudo sed -i 's/try_files $uri $uri\/ =404;/try_files $uri \/index.html $uri\/ =404;/'  /etc/nginx/sites-available/default
 sudo systemctl reload nginx.service
