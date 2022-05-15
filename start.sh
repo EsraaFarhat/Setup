@@ -108,4 +108,4 @@ sudo cp /etc/nginx/sites-available/default ~
 sudo sed -i 's/root \/var\/www\/html;/root \/home\/pi\/www;/'  /etc/nginx/sites-available/default
 sudo sed -i 's/try_files $uri $uri\/ =404;/try_files $uri \/index.html $uri\/ =404;/'  /etc/nginx/sites-available/default
 sudo systemctl reload nginx.service
-cp -a /home/pi/LOC_WebLite_Build/. /home/pi/www
+cp -a /home/pi/Kelteck-web-lite-build/. /home/pi/www
