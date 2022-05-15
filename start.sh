@@ -101,7 +101,7 @@ cd ..
 
 # INSTALL THE Frontend
 mkdir ~/www
-git clone https://github.com/aya-maher/LOC_WebLite_Build.git
+git clone https://github.com/EsraaFarhat/Kelteck-web-lite-build.git
 sudo apt install nginx -y
 # sudo apt-get install ufw
 sudo cp /etc/nginx/sites-available/default ~
